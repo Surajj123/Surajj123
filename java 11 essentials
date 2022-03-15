@@ -1,0 +1,209 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+public class Tester {
+    public static void main(String[] args) {
+        List<Integer> data = new ArrayList(); //generic
+        data.add(12);
+        data.add(45);
+        data.add(14);
+        
+        for(Integer s : data) {
+            System.out.println(s);
+        }
+        
+        System.out.println("Length: " + data.size());
+        System.out.println("contains: " + data.contains(13));
+        
+                
+        List<Integer> list2 = new ArrayList();
+        list2.add(22); list2.add(30);
+        data.addAll(list2);
+        
+        System.out.println("After adding another list....");
+        
+        Collections.sort(data);
+        System.out.println("Largest element: " + Collections.max(data));
+        for(Integer s : data) {
+            System.out.println(s);
+        }
+    }
+}
+===========================================================================================================================================
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+public class Test {
+    public static void main(String[] args) {        
+        List<String> namesList = new ArrayList();
+        namesList.add("suprathika");
+        namesList.add("swati");
+        namesList.add("mounika");
+        namesList.add("komal");
+        
+        for(String str : namesList) {
+            System.out.println(str);
+        }
+                   
+     oR
+
+        System.out.println("Iterating using Iterator interface");
+        Iterator<String> iterator = namesList.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+}
+===============================================================================================================================================================
+import java.util.ArrayList;
+import java.util.List;
+class Mobile{
+    private String model;
+    private double price;
+        
+    public Mobile(String model, double price) {
+        this.model = model;
+        this.price = price;
+    }
+    public String getModel() {
+        return model;
+    }
+    public void setModel(String model) {
+        this.model = model;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+}
+public class Tester {
+    public static void main(String[] args) {
+        List<Mobile> listOfMobiles = new ArrayList();
+        
+        Mobile mobile1 = new Mobile("Syamsing420",5600);
+        Mobile mobile2 = new Mobile("Yeskia",13000);
+        
+        listOfMobiles.add(mobile1); listOfMobiles.add(mobile2);
+        
+        for(Mobile m : listOfMobiles) {
+            System.out.println("Model: " + m.getModel());
+            System.out.println("Price: " + m.getPrice());
+        }
+    }
+}
+===============================================================================
+import java.util.ArrayList;                                                                              
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+public class Test {
+    public static void main(String[] args) {        
+        
+        Set<String> sets = new HashSet();
+        sets.add("C");sets.add("B");sets.add("B");
+        sets.add("B");sets.add("A");
+        System.out.println("Set interface............");
+        for(String s: sets) {
+            System.out.println(s);
+        }
+        
+        List<String> list1 = new ArrayList();
+        list1.add("G");list1.add("B");list1.add("A");
+        list1.add("D");list1.add("A");
+        
+        System.out.println("List interface............");
+        for(String s: list1) {
+            System.out.println(s);
+        }
+    }
+}
+=======================================================================
+Set<String> sets = new TreeSet();
+        sets.add("C");
+        sets.add("B");
+        sets.add("B");
+        sets.add("B");
+        sets.add("A");
+        System.out.println("Set interface............");
+        for(String s: sets) {
+            System.out.println(s);
+        }
+============================
+List- duplicates, ordered
+Set - 
+    -HashSet - no duplicates, unordered
+    -TreeSet - no duplicates, ordered
+
+========================================================
+import java.util.HashMap;
+import java.util.Map;
+public class Test {
+    public static void main(String[] args) {        
+        
+        Map<String, Double> items = new HashMap();
+        
+        items.put("Vadapav",10.00);
+        items.put("Poha",80.00);
+        items.put("Biryani",190.00);
+        
+        
+        System.out.println(items.get("Poha"));
+        
+        System.out.println(items.keySet());
+        System.out.println(items.values());
+    }
+}
+===================================================================================
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+public class Test {
+    public static void main(String[] args) {
+        Map<String, Integer> books = new HashMap<String, Integer>();
+        // Adding key-value pairs to the map
+        books.put("Data Structures With Java", 50);
+        books.put("Operating System", 80);
+        books.put("Let Us C", 70);
+        books.put("Java Fundamentals", 40);
+        //System.out.println(books.keySet());
+        //System.out.println(books.values());
+        
+        Set<Entry<String,Integer>> entries = books.entrySet();
+        
+        for(Entry<String,Integer> entry: entries) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+    }
+}
+===========================================================================================
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+public class Test {
+    public static void main(String[] args) {
+        Map<String, Integer> books = new HashMap<String, Integer>();
+        // Adding key-value pairs to the map
+        books.put("Data Structures With Java", 50);
+        books.put("Operating System", 80);
+        books.put("Let Us C", 70);
+        books.put("Java Fundamentals", 40);
+        //System.out.println(books.keySet());
+        //System.out.println(books.values());
+        
+        
+        
+        Set<Entry<String,Integer>> entries = books.entrySet();
+        System.out.println(books.get("Let Us C"));
+        
+        for(Entry<String,Integer> entry: entries) {
+            if(entry.getKey().equals("Let Us C"))
+                System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+        
+        
+    }
+}
